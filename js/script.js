@@ -1,15 +1,13 @@
 const svg = document.querySelector(".visualizer-svg");
 
 // 各バーの幅
-const barWidths = [
-    7, 7, 7, 7, 7, 7, 7, 7, 7, 7,
-    14, 14, 14, 14, 14, 14, 14, 14, 14, 14,
-    14, 14, 14, 14, 14, 14, 14, 14, 14, 14,
-    7, 7, 7, 7, 7, 7, 7, 7, 7, 7,
-];
+const barWidths = Array.from({ length: 50 }, () =>
+    Math.floor(Math.random() * 5) + 1
+);
 
-const barHeight = 170;
-const gap = 15;
+const barHeight = 50;
+const minGap = 3;
+const maxGap = 10;
 
 // SVGのバーを生成
 let x = 0;
@@ -31,6 +29,9 @@ barWidths.forEach((width, index) => {
     }
 
     svg.appendChild(rect);
+
+    // 次のバーとの間隔をランダム生成
+    const gap = Math.random() * (maxGap - minGap) + minGap;
 
     x += width + gap;
 });

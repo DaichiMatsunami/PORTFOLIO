@@ -2,26 +2,6 @@
     outline: red 1px solid;
 } */
 
-:root {
-    /* タイトル・見出し（PCでは大きく、スマホでは程よいサイズに） */
-    --font-size-h1: clamp(2rem, 1.34rem + 2.82vw, 3.5rem);
-    /* 32px 〜 56px */
-    --font-size-h2: clamp(1.5rem, 1.15rem + 1.5vw, 2.3rem);
-    /* 24px 〜 36.8px */
-    --font-size-h3: clamp(1.25rem, 1.03rem + 0.94vw, 1.75rem);
-    /* 20px 〜 28px */
-
-    /* 本文・リード文（読みやすさを最優先、スマホでも小さくしすぎない） */
-    --font-size-lead: clamp(1.05rem, 0.96rem + 0.38vw, 1.25rem);
-    /* 16.8px 〜 20px */
-    --font-size-body: clamp(0.95rem, 0.93rem + 0.09vw, 1rem);
-    /* 15.2px 〜 16px */
-
-    /* 補足・注記・キャプション（小さくても視認性を保つ限界値） */
-    --font-size-sm: clamp(0.8rem, 0.78rem + 0.09vw, 0.85rem);
-    /* 12.8px 〜 13.6px */
-}
-
 /* 1. Jost（英数字・記号用）の定義 */
 @font-face {
     font-family: 'MyJost';
@@ -44,8 +24,6 @@ body {
     font-family: 'MyJost', 'MyNotoSansJP', sans-serif;
 }
 
-
-
 .bg-black {
     background: #222;
 }
@@ -57,11 +35,21 @@ body {
 
 .h-wrapper {
     min-height: 100vh;
-    padding: 0 10%;
+}
+
+.h-wrapper .copy {
+    position: relative;
+}
+
+.h-wrapper .name {
+    position: absolute;
+    top: 5%;
+    right: 5%;
+    text-align: right;
 }
 
 .visualizer {
-    width: 100%;
+    width: 90%;
     overflow: hidden;
     cursor: pointer;
     position: absolute;
