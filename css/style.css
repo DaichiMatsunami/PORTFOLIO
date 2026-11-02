@@ -1,0 +1,89 @@
+/* * {
+    outline: red 1px solid;
+} */
+
+:root {
+    /* タイトル・見出し（PCでは大きく、スマホでは程よいサイズに） */
+    --font-size-h1: clamp(2rem, 1.34rem + 2.82vw, 3.5rem);
+    /* 32px 〜 56px */
+    --font-size-h2: clamp(1.5rem, 1.15rem + 1.5vw, 2.3rem);
+    /* 24px 〜 36.8px */
+    --font-size-h3: clamp(1.25rem, 1.03rem + 0.94vw, 1.75rem);
+    /* 20px 〜 28px */
+
+    /* 本文・リード文（読みやすさを最優先、スマホでも小さくしすぎない） */
+    --font-size-lead: clamp(1.05rem, 0.96rem + 0.38vw, 1.25rem);
+    /* 16.8px 〜 20px */
+    --font-size-body: clamp(0.95rem, 0.93rem + 0.09vw, 1rem);
+    /* 15.2px 〜 16px */
+
+    /* 補足・注記・キャプション（小さくても視認性を保つ限界値） */
+    --font-size-sm: clamp(0.8rem, 0.78rem + 0.09vw, 0.85rem);
+    /* 12.8px 〜 13.6px */
+}
+
+/* 1. Jost（英数字・記号用）の定義 */
+@font-face {
+    font-family: 'MyJost';
+    src: url('../assets/fonts/Jost-VariableFont_wght.woff2') format('woff2');
+    font-weight: 400;
+    font-style: normal;
+    font-display: swap;
+}
+
+/* 2. Noto Sans JP（日本語用）の定義 */
+@font-face {
+    font-family: 'MyNotoSansJP';
+    src: url('../assets/fonts/NotoSansJP-Medium-subset.woff2') format('woff2');
+    font-weight: 400;
+    font-style: normal;
+    font-display: swap;
+}
+
+body {
+    font-family: 'MyJost', 'MyNotoSansJP', sans-serif;
+}
+
+
+
+.bg-black {
+    background: #222;
+}
+
+.bg-black p,
+.bg-black h1 {
+    color: white;
+}
+
+.h-wrapper {
+    min-height: 100vh;
+    padding: 0 10%;
+}
+
+.visualizer {
+    width: 100%;
+    overflow: hidden;
+    cursor: pointer;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.visualizer-svg {
+    display: block;
+    width: 100%;
+    height: auto;
+}
+
+.bar {
+    fill: #fff;
+    transition: 0.1s ease;
+}
+
+.bar.active {
+    fill: #4ade63;
+    transform: translateY(-10%);
+}
+
+@media screen {}

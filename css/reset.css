@@ -1,0 +1,124 @@
+/* ==========================================================================
+    Modern Reset CSS (2026 Edition) by Google Gemini
+   ========================================================================== */
+
+/* 1. 全ての要素のスタイルをリセット（疑似要素含む） */
+*,
+::before,
+::after {
+    box-sizing: border-box;
+    /* サイズ計算を直感的に（パディングとボーダーを含める） */
+    margin: 0;
+    /* デフォルトの余白を削除 */
+    padding: 0;
+    /* デフォルトのパディングを削除 */
+}
+
+/* 2. 基本的な文書構造の設定 */
+html {
+    -webkit-text-size-adjust: none;
+    /* iOS Safariでの文字サイズ自動調整を防止 */
+    text-size-adjust: none;
+    overflow-wrap: break-word;
+    /* 長い単語の改行を許可してレイアウト崩れを防止 */
+}
+
+body {
+    min-height: 100vh;
+    /* 常に画面の高さいっぱいに広げる */
+    min-height: 100dvh;
+    /* モバイルのツールバーを考慮した動的ビューポート */
+    line-height: 1.6;
+    /* 読みやすいデフォルトの行間 */
+    -webkit-font-smoothing: antialiased;
+    /* macOS/iOSでのフォントを滑らかに */
+    -moz-osx-font-smoothing: grayscale;
+}
+
+/* 3. メディア要素の最適化 */
+img,
+picture,
+video,
+canvas,
+svg {
+    display: block;
+    /* インライン特有の下部余白を消す */
+    max-width: 100%;
+    /* 親要素からはみ出さないように */
+    height: auto;
+    /* アスペクト比を維持 */
+}
+
+/* 4. フォーム・ボタン・入力要素の最適化 */
+input,
+button,
+textarea,
+select {
+    font: inherit;
+    /* 親要素のフォント（サイズや書体）を強制継承 */
+    color: inherit;
+    /* 文字色を継承 */
+    letter-spacing: inherit;
+    background: transparent;
+    /* デフォルトの背景をクリア */
+    border: none;
+    /* デフォルトの枠線を削除 */
+    border-radius: 0;
+    /* iOSでのデフォルト角丸を削除 */
+}
+
+textarea {
+    resize: vertical;
+    /* ユーザーによるサイズ変更を縦方向のみに制限 */
+}
+
+button,
+select,
+[type="button"],
+[type="submit"] {
+    cursor: pointer;
+    /* クリック可能であることを明示 */
+}
+
+button:disabled,
+input:disabled {
+    cursor: not-allowed;
+    /* 無効化時のカーソル */
+}
+
+/* 5. リスト・リンクの装飾クリア */
+ol,
+ul {
+    list-style: none;
+    /* 箇条書きのドットや数値を削除 */
+}
+
+a {
+    text-decoration: none;
+    /* 下線を削除 */
+    color: inherit;
+    /* 文字色を継承 */
+}
+
+/* 6. テーブルの設定 */
+table {
+    border-collapse: collapse;
+    /* セルの境界線を重ねる */
+    border-spacing: 0;
+}
+
+/* 7. ユーザーのアクセシビリティ（アニメーション軽減設定）への配慮 */
+@media (prefers-reduced-motion: reduce) {
+    html:focus-within {
+        scroll-behavior: auto;
+    }
+
+    *,
+    ::before,
+    ::after {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+        scroll-behavior: auto !important;
+    }
+}
