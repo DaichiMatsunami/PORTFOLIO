@@ -20,6 +20,35 @@
     font-display: swap;
 }
 
+h1 {
+    font-size: clamp(0.938rem, 0.9rem + 0.2vw, 1rem);
+    font-weight: normal;
+}
+
+h2{
+    /* 48px */
+    font-size: clamp(1.625rem, 1.182rem + 1.89vw, 3rem);
+}
+
+h3{
+    /* 24px */
+    font-size: clamp(1.125rem, 1.006rem + 0.51vw, 1.5rem);
+}
+
+main p {
+    /* 16px 文章*/
+    font-size: clamp(0.938rem, 0.9rem + 0.2vw, 1rem);
+}
+
+p{
+    /* 12px */
+    font-size: clamp(0.406rem, 0.296rem + 0.47vw, 0.75rem);
+}
+
+span{
+    color: #50EB68;
+}
+
 body {
     font-family: 'MyJost', 'MyNotoSansJP', sans-serif;
 }
@@ -31,6 +60,14 @@ body {
 .bg-black p,
 .bg-black h1 {
     color: white;
+}
+
+header{
+    z-index: 0;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    height: auto;
 }
 
 .h-wrapper {
@@ -72,6 +109,14 @@ body {
 .bar.active {
     fill: #4ade63;
     transform: translateY(-10%);
+}
+
+.m-wrapper{
+    position: relative;
+    background-color:white ;
+    z-index: 1;
+    min-height: 100vh;
+    top: 100vh;
 }
 
 @media screen {}

@@ -2,7 +2,7 @@ const svg = document.querySelector(".visualizer-svg");
 
 // 各バーの幅
 const barWidths = Array.from({ length: 50 }, () =>
-    Math.floor(Math.random() * 5) + 1
+    Math.floor(Math.random() * 10) + 1
 );
 
 const barHeight = 50;
@@ -34,7 +34,7 @@ barWidths.forEach((width, index) => {
     const gap = Math.random() * (maxGap - minGap) + minGap;
 
     x += width + gap;
-});
+}); 
 
 //activeを切り替える
 
@@ -45,4 +45,13 @@ bars.forEach((bar) => {
         bars.forEach((b) => b.classList.remove("active"));
         bar.classList.add("active");
     });
+});
+
+// lenis
+
+const lenis = new Lenis({
+  autoRaf: true,
+  duration: 1.4,
+  smoothWheel: true,
+  anchors: true,
 });
