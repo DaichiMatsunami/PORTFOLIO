@@ -1,3 +1,5 @@
+// first view
+
 const svg = document.querySelector(".visualizer-svg");
 
 // 各バーの幅
@@ -47,6 +49,8 @@ bars.forEach((bar) => {
     });
 });
 
+// e:first view
+
 // lenis
 
 const lenis = new Lenis({
@@ -55,3 +59,5 @@ const lenis = new Lenis({
     smoothWheel: true,
     anchors: true,
 });
+
+// e:lenis

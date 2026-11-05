@@ -25,12 +25,12 @@ h1 {
     font-weight: normal;
 }
 
-h2{
+h2 {
     /* 48px */
     font-size: clamp(1.625rem, 1.182rem + 1.89vw, 3rem);
 }
 
-h3{
+h3 {
     /* 24px */
     font-size: clamp(1.125rem, 1.006rem + 0.51vw, 1.5rem);
 }
@@ -40,17 +40,18 @@ main p {
     font-size: clamp(0.938rem, 0.9rem + 0.2vw, 1rem);
 }
 
-p{
+p {
     /* 12px */
     font-size: clamp(0.406rem, 0.296rem + 0.47vw, 0.75rem);
 }
 
-span{
+span {
     color: #44cf5b;
 }
 
 body {
     font-family: 'MyJost', 'MyNotoSansJP', sans-serif;
+    color: #222;
 }
 
 .bg-black {
@@ -62,7 +63,17 @@ body {
     color: white;
 }
 
-header{
+.b-radius20 {
+    border-radius: 20px;
+    overflow: hidden;
+}
+
+.b-radius40 {
+    border-radius: 40px;
+    overflow: hidden;
+}
+
+header {
     z-index: 0;
     position: fixed;
     top: 0;
@@ -111,12 +122,43 @@ header{
     transform: translateY(-10%);
 }
 
-.m-wrapper{
+.m-wrapper {
     position: relative;
-    background-color:white ;
+    background-color: rgb(224, 224, 224);
     z-index: 1;
     min-height: 100vh;
     top: 100vh;
+    padding: 5%;
+}
+
+.c-wrapper {
+    margin-top: 5%;
+}
+
+.c-container {
+    width: 100%;
+    padding: 3%;
+    background-color: rgb(234, 234, 234);
+    box-shadow: 0 4px 4px 0 rgb(0 0 0 / 25%);
+}
+
+.c-img img {
+    width: 100%;
+}
+
+.c-caption {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+    margin: 3% .5% 0 .5%;
+}
+
+.caption-box {
+    background-color: rgb(214, 214, 214);
+    padding: 3%;
+    margin-top: 3%;
+    width: 100%;
 }
 
 @media screen {}
