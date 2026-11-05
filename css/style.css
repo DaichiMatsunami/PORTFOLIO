@@ -46,7 +46,7 @@ p{
 }
 
 span{
-    color: #50EB68;
+    color: #44cf5b;
 }
 
 body {
@@ -107,7 +107,7 @@ header{
 }
 
 .bar.active {
-    fill: #4ade63;
+    fill: #3ab54e;
     transform: translateY(-10%);
 }
 
