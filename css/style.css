@@ -2,6 +2,10 @@
     outline: red 1px solid;
 } */
 
+html {
+    font-size: 100%;
+}
+
 /* 1. Jost（英数字・記号用）の定義 */
 @font-face {
     font-family: 'MyJost';
@@ -35,18 +39,14 @@ h3 {
     font-size: clamp(1.125rem, 1.006rem + 0.51vw, 1.5rem);
 }
 
-main p {
+p {
     /* 16px 文章*/
     font-size: clamp(0.938rem, 0.9rem + 0.2vw, 1rem);
 }
 
-p {
+p:has(span) {
     /* 12px */
     font-size: clamp(0.406rem, 0.296rem + 0.47vw, 0.75rem);
-}
-
-span {
-    color: #44cf5b;
 }
 
 body {
@@ -118,7 +118,7 @@ header {
 }
 
 .bar.active {
-    fill: #3ab54e;
+    fill: #45d35c;
     transform: translateY(-10%);
 }
 
@@ -142,8 +142,13 @@ header {
     box-shadow: 0 4px 4px 0 rgb(0 0 0 / 25%);
 }
 
+.c-img {
+    position: relative;
+}
+
 .c-img img {
     width: 100%;
+    aspect-ratio: 1/1;
 }
 
 .c-caption {
@@ -159,6 +164,24 @@ header {
     padding: 3%;
     margin-top: 3%;
     width: 100%;
+}
+
+.c-roll {
+    position: absolute;
+    bottom: 3%;
+    right: 5%;
+}
+
+.c-roll .caption {
+    background-color: #47d35e;
+    padding: 3px 12px;
+    border-radius: 100px;
+    width: fit-content;
+    margin: 0 0 5% auto;
+}
+
+.c-roll .caption p {
+    color: white;
 }
 
 @media screen {}
