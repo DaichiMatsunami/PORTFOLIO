@@ -34,7 +34,7 @@ barWidths.forEach((width, index) => {
     const gap = Math.random() * (maxGap - minGap) + minGap;
 
     x += width + gap;
-}); 
+});
 
 //activeを切り替える
 
@@ -50,8 +50,8 @@ bars.forEach((bar) => {
 // lenis
 
 const lenis = new Lenis({
-  autoRaf: true,
-  duration: 1.4,
-  smoothWheel: true,
-  anchors: true,
+    autoRaf: true,
+    duration: 1.4,
+    smoothWheel: true,
+    anchors: true,
 });
