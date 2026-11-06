@@ -61,3 +61,17 @@ const lenis = new Lenis({
 });
 
 // e:lenis
+
+const body = document.querySelector('body')
+const loadFont = document.getElementById('works');
+
+const observer = new IntersectionObserver((entries) => {
+    entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+            body.classList.add("is-visible");
+            observer.unobserve(loadFont);
+        }
+    });
+});
+
+observer.observe(loadFont);

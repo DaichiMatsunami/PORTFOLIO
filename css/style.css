@@ -50,8 +50,12 @@ p:has(span) {
 }
 
 body {
-    font-family: 'MyJost', 'MyNotoSansJP', sans-serif;
+    font-family: 'MyJost', sans-serif;
     color: #222;
+}
+
+body.is-visible {
+    font-family: 'MyJost','MyNotoSansJP', sans-serif;
 }
 
 .bg-black {
@@ -130,8 +134,8 @@ header {
     top: 100vh;
     padding: 5%;
     display: flex;
-        justify-content: space-between;
-    align-items:start;
+    justify-content: space-between;
+    align-items: start;
 }
 
 .c-wrapper {
