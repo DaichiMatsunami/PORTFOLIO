@@ -1,6 +1,6 @@
-/* * {
+* {
     outline: red 1px solid;
-} */
+}
 
 html {
     font-size: 100%;
@@ -140,7 +140,7 @@ header {
 
 .c-wrapper {
     margin-top: 1%;
-    width: 50%;
+    width: 60%;
 }
 
 .c-container {
@@ -151,10 +151,13 @@ header {
     margin-bottom: 5%;
     display: flex;
     flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: start;
 }
 
 .c-img {
     position: relative;
+    width: 40%;
 }
 
 .c-img img {
@@ -167,14 +170,15 @@ header {
     flex-wrap: wrap;
     justify-content: space-between;
     align-items: center;
-    margin: 3% .5% 0 .5%;
+    width: 55%;
+    height: fit-content;
 }
 
 .caption-box {
     background-color: rgb(214, 214, 214);
     padding: 3%;
-    margin-top: 3%;
     width: 100%;
+    align-items: flex-end;
 }
 
 .c-roll {
