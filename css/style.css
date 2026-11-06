@@ -82,7 +82,7 @@ header {
 }
 
 .h-wrapper {
-    min-height: 100vh;
+    min-height: 100dvh;
 }
 
 .h-wrapper .copy {
@@ -129,10 +129,14 @@ header {
     min-height: 100vh;
     top: 100vh;
     padding: 5%;
+    display: flex;
+        justify-content: space-between;
+    align-items:start;
 }
 
 .c-wrapper {
-    margin-top: 5%;
+    margin-top: 1%;
+    width: 50%;
 }
 
 .c-container {
@@ -140,6 +144,9 @@ header {
     padding: 3%;
     background-color: rgb(234, 234, 234);
     box-shadow: 0 4px 4px 0 rgb(0 0 0 / 25%);
+    margin-bottom: 5%;
+    display: flex;
+    flex-wrap: wrap;
 }
 
 .c-img {
@@ -182,6 +189,33 @@ header {
 
 .c-roll .caption p {
     color: white;
+}
+
+.progress-ring {
+    position: absolute;
+    top: 3%;
+    left: 3%;
+    width: 15%;
+}
+
+.progress-ring circle {
+    cx: 50;
+    cy: 50;
+    r: 40;
+    fill: none;
+    stroke: #47d35e;
+    stroke-width: 3;
+    stroke-dasharray: 251.327;
+    stroke-dashoffset: 251.327;
+    animation: draw 2s ease forwards;
+    transform: rotate(-90deg);
+    transform-origin: center;
+}
+
+@keyframes draw {
+    to {
+        stroke-dashoffset: 0;
+    }
 }
 
 @media screen {}
