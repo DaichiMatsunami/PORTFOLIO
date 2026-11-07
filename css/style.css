@@ -55,7 +55,12 @@ body {
 }
 
 body.is-visible {
-    font-family: 'MyJost','MyNotoSansJP', sans-serif;
+    font-family: 'MyJost', 'MyNotoSansJP', sans-serif;
+}
+
+#works{
+    position: sticky;
+    top: 5%;
 }
 
 .bg-black {
@@ -152,7 +157,7 @@ header {
     display: flex;
     flex-wrap: wrap;
     justify-content: space-between;
-    align-items: start;
+    align-content: space-between;
 }
 
 .c-img {
@@ -168,17 +173,15 @@ header {
 .c-caption {
     display: flex;
     flex-wrap: wrap;
-    justify-content: space-between;
     align-items: center;
-    width: 55%;
-    height: fit-content;
+    justify-content: space-between;
+    width: 57%;
 }
 
 .caption-box {
     background-color: rgb(214, 214, 214);
     padding: 3%;
     width: 100%;
-    align-items: flex-end;
 }
 
 .c-roll {
@@ -201,9 +204,9 @@ header {
 
 .progress-ring {
     position: absolute;
-    top: 3%;
-    left: 3%;
-    width: 15%;
+    top: 5%;
+    left: 5%;
+    width: 12%;
 }
 
 .progress-ring circle {
