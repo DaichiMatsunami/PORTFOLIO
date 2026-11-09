@@ -62,6 +62,7 @@ body.is-visible {
 #works {
     position: sticky;
     top: 5%;
+    width: 35%;
 }
 
 .bg-black {
@@ -150,7 +151,8 @@ main {
     border-radius: 40px;
 
     .c-wrapper {
-        margin-top: 1%;
+        /* margin-top: 1%; */
+        margin-top: 60vh;
         width: 60%;
     }
 
@@ -206,6 +208,23 @@ main {
 
     .c-roll .caption p {
         color: white;
+    }
+}
+
+.m-wrapper.about {
+    position: absolute;
+    height: 100dvh;
+    width: 100%;
+    background-color: #222;
+
+    video {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        aspect-ratio: 1/1;
+        width: 40%;
+        object-fit: cover;
     }
 }
 
