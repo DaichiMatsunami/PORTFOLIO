@@ -62,10 +62,11 @@ const lenis = new Lenis({
 
 // e:lenis
 
+//loadFont
 const body = document.querySelector('body')
 const loadFont = document.getElementById('works');
 
-const observer = new IntersectionObserver((entries) => {
+const observerFont = new IntersectionObserver((entries) => {
     entries.forEach((entry) => {
         if (entry.isIntersecting) {
             body.classList.add("is-visible");
@@ -74,4 +75,9 @@ const observer = new IntersectionObserver((entries) => {
     });
 });
 
-observer.observe(loadFont);
+observerFont.observe(loadFont);
+
+//e:loadfont
+
+//videoExpansion
+

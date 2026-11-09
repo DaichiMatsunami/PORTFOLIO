@@ -1,6 +1,6 @@
-* {
+/* * {
     outline: red 1px solid;
-}
+} */
 
 html {
     font-size: 100%;
@@ -52,13 +52,14 @@ p:has(span) {
 body {
     font-family: 'MyJost', sans-serif;
     color: #222;
+    text-align: justify;
 }
 
 body.is-visible {
     font-family: 'MyJost', 'MyNotoSansJP', sans-serif;
 }
 
-#works{
+#works {
     position: sticky;
     top: 5%;
 }
@@ -92,17 +93,17 @@ header {
 
 .h-wrapper {
     min-height: 100dvh;
-}
 
-.h-wrapper .copy {
-    position: relative;
-}
+    .copy {
+        position: relative;
+    }
 
-.h-wrapper .name {
-    position: absolute;
-    top: 5%;
-    right: 5%;
-    text-align: right;
+    .name {
+        position: absolute;
+        top: 5%;
+        right: 5%;
+        text-align: right;
+    }
 }
 
 .visualizer {
@@ -113,12 +114,12 @@ header {
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-}
 
-.visualizer-svg {
-    display: block;
-    width: 100%;
-    height: auto;
+    .visualizer-svg {
+        display: block;
+        width: 100%;
+        height: auto;
+    }
 }
 
 .bar {
@@ -131,75 +132,78 @@ header {
     transform: translateY(-10%);
 }
 
-.m-wrapper {
+main {
     position: relative;
     background-color: rgb(224, 224, 224);
     z-index: 1;
     min-height: 100vh;
     top: 100vh;
+}
+
+.m-wrapper.works {
     padding: 5%;
     display: flex;
     justify-content: space-between;
     align-items: start;
-}
 
-.c-wrapper {
-    margin-top: 1%;
-    width: 60%;
-}
+    .c-wrapper {
+        margin-top: 1%;
+        width: 60%;
+    }
 
-.c-container {
-    width: 100%;
-    padding: 3%;
-    background-color: rgb(234, 234, 234);
-    box-shadow: 0 4px 4px 0 rgb(0 0 0 / 25%);
-    margin-bottom: 5%;
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-between;
-    align-content: space-between;
-}
+    .c-container {
+        width: 100%;
+        padding: 3%;
+        background-color: rgb(234, 234, 234);
+        box-shadow: 0 4px 4px 0 rgb(0 0 0 / 25%);
+        margin-bottom: 5%;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+        align-content: space-between;
+    }
 
-.c-img {
-    position: relative;
-    width: 40%;
-}
+    .c-img {
+        position: relative;
+        width: 40%;
+    }
 
-.c-img img {
-    width: 100%;
-    aspect-ratio: 1/1;
-}
+    .c-img img {
+        width: 100%;
+        aspect-ratio: 1/1;
+    }
 
-.c-caption {
-    display: flex;
-    flex-wrap: wrap;
-    align-items: center;
-    justify-content: space-between;
-    width: 57%;
-}
+    .c-caption {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+        width: 57%;
+    }
 
-.caption-box {
-    background-color: rgb(214, 214, 214);
-    padding: 3%;
-    width: 100%;
-}
+    .caption-box {
+        background-color: rgb(214, 214, 214);
+        padding: 5% 5%;
+        width: 100%;
+        align-self: flex-end;
+    }
 
-.c-roll {
-    position: absolute;
-    bottom: 3%;
-    right: 5%;
-}
+    .c-roll {
+        position: absolute;
+        bottom: 3%;
+        right: 5%;
+    }
 
-.c-roll .caption {
-    background-color: #47d35e;
-    padding: 3px 12px;
-    border-radius: 100px;
-    width: fit-content;
-    margin: 0 0 5% auto;
-}
+    .c-roll .caption {
+        background-color: #47d35e;
+        padding: 3px 12px;
+        border-radius: 100px;
+        width: fit-content;
+        margin: 0 0 5% auto;
+    }
 
-.c-roll .caption p {
-    color: white;
+    .c-roll .caption p {
+        color: white;
+    }
 }
 
 .progress-ring {
