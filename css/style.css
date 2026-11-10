@@ -107,6 +107,21 @@ header {
     }
 }
 
+#vrm-container {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+    pointer-events: none;
+}
+
+#vrm-container canvas {
+    display: block;
+    width: 100%;
+    height: 100%;
+}
+
 .visualizer {
     width: 90%;
     overflow: hidden;
