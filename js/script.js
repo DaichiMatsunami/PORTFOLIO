@@ -1,3 +1,9 @@
+//three + vRoid
+
+import * as THREE from 'three';
+import { GLTFLoader } from 'three/addons/loaders/GLTFLoader.js';
+import { VRMLoaderPlugin } from '@pixiv/three-vrm';
+
 // first view
 
 const svg = document.querySelector(".visualizer-svg");
@@ -78,6 +84,118 @@ const observer= new IntersectionObserver((entries) => {
 observer.observe(loadFont);
 
 //e:loadfont
+
+// ==============================
+// VRM MODEL
+// ==============================
+
+const container = document.getElementById('vrm-container');
+
+if (container) {
+
+    // Scene
+    const scene = new THREE.Scene();
+
+    // Camera
+    const camera = new THREE.PerspectiveCamera(
+        35,
+        container.clientWidth / container.clientHeight,
+        0.1,
+        100
+    );
+
+    camera.position.set(0, 1.4, 1);
+    camera.lookAt(0, 1.6, 0);
+
+    // Renderer
+    const renderer = new THREE.WebGLRenderer({
+        alpha: true,
+        antialias: true
+    });
+
+    renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2));
+    renderer.setSize(container.clientWidth, container.clientHeight);
+
+    container.appendChild(renderer.domElement);
+
+    // Lighting
+    const ambientLight = new THREE.AmbientLight(0xffffff, 1.5);
+    scene.add(ambientLight);
+
+    const directionalLight = new THREE.DirectionalLight(0xffffff, 2);
+    directionalLight.position.set(1, 2, 3);
+    scene.add(directionalLight);
+
+    // VRM Loader
+    const loader = new GLTFLoader();
+
+    loader.register((parser) => {
+        return new VRMLoaderPlugin(parser);
+    });
+
+    let currentVrm = null;
+
+    loader.load(
+        '/models/model.vrm',
+
+        (gltf) => {
+
+            currentVrm = gltf.userData.vrm;
+
+            scene.add(currentVrm.scene);
+
+            // モデルの向きを調整
+            currentVrm.scene.rotation.y = 0;
+
+            console.log('VRM loaded!', currentVrm);
+
+        },
+
+        (progress) => {
+            console.log(
+                'Loading:',
+                (progress.loaded / progress.total * 100).toFixed(1),
+                '%'
+            );
+        },
+
+        (error) => {
+            console.error('VRM loading error:', error);
+        }
+    );
+
+    // Animation Loop
+    const clock = new THREE.Clock();
+
+    function animate() {
+
+        requestAnimationFrame(animate);
+
+        const delta = clock.getDelta();
+
+        if (currentVrm) {
+            currentVrm.update(delta);
+        }
+
+        renderer.render(scene, camera);
+    }
+
+    animate();
+
+    // Resize
+    window.addEventListener('resize', () => {
+
+        const width = container.clientWidth;
+        const height = container.clientHeight;
+
+        camera.aspect = width / height;
+        camera.updateProjectionMatrix();
+
+        renderer.setSize(width, height);
+
+    });
+
+}
 
 //videoExpansion
 
