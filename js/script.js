@@ -72,7 +72,7 @@ const lenis = new Lenis({
 const body = document.querySelector('body')
 const loadFont = document.getElementById('works');
 
-const observer= new IntersectionObserver((entries) => {
+const observer = new IntersectionObserver((entries) => {
     entries.forEach((entry) => {
         if (entry.isIntersecting) {
             body.classList.add("is-visible");
@@ -135,8 +135,10 @@ if (container) {
 
     let currentVrm = null;
 
+    const modelPath = `${import.meta.env.BASE_URL}models/model.vrm`;
+
     loader.load(
-        '/models/model.vrm',
+        modelPath,
 
         (gltf) => {
 
