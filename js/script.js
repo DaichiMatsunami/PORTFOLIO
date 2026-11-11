@@ -72,7 +72,7 @@ const lenis = new Lenis({
 const body = document.querySelector('body')
 const loadFont = document.getElementById('works');
 
-const observer= new IntersectionObserver((entries) => {
+const observer = new IntersectionObserver((entries) => {
     entries.forEach((entry) => {
         if (entry.isIntersecting) {
             body.classList.add("is-visible");
@@ -105,7 +105,11 @@ if (container) {
     );
 
     camera.position.set(0, 1.4, 1);
+<<<<<<< HEAD
     camera.lookAt(0, 1.6, 0);
+=======
+    camera.lookAt(0, 1.7, 0);
+>>>>>>> home
 
     // Renderer
     const renderer = new THREE.WebGLRenderer({
@@ -135,8 +139,15 @@ if (container) {
 
     let currentVrm = null;
 
+<<<<<<< HEAD
     loader.load(
         '/models/model.vrm',
+=======
+    const modelPath = `${import.meta.env.BASE_URL}models/model.vrm`;
+
+    loader.load(
+        modelPath,
+>>>>>>> home
 
         (gltf) => {
 
