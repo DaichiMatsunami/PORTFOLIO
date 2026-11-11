@@ -136,8 +136,7 @@ if (container) {
     let currentVrm = null;
 
     loader.load(
-        '/models/model.vrm',
-
+        `${import.meta.env.BASE_URL}models/model.vrm`,
         (gltf) => {
 
             currentVrm = gltf.userData.vrm;
