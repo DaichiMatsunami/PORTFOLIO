@@ -107,8 +107,8 @@ if (container) {
         100
     );
 
-    camera.position.set(2, 1.8, 4);
-    camera.lookAt(0, 1.3, 0);
+    camera.position.set(0, 1.6, 1.4);
+    camera.lookAt(0, 1.7, .6);
 
     // Renderer
     const renderer = new THREE.WebGLRenderer({
@@ -210,16 +210,16 @@ if (container) {
             // ==============================
 
             // 太ももだけを回転
-            leftUpperLeg.rotation.x = -1.0;
-            rightUpperLeg.rotation.x = -1.0;
+            leftUpperLeg.rotation.x = 0;
+            rightUpperLeg.rotation.x = 0;
 
             // 膝を曲げる
-            leftLowerLeg.rotation.x = 1.3;
-            rightLowerLeg.rotation.x = 1.3;
+            leftLowerLeg.rotation.x = 0;
+            rightLowerLeg.rotation.x = 0;
 
             // 腰を下げる
-            hips.position.y = hipsBasePosition.y - 0.3;
-            spine.rotation.x = -0.15;
+            hips.position.y = hipsBasePosition.y;
+            spine.rotation.x = 0;
 
             // 上半身は初期状態
             spine.rotation.set(0, 0, 0);
@@ -243,32 +243,6 @@ if (container) {
                     y: neck.rotation.y
                 };
             }
-
-            // 右腕のボーンを取得
-            // rightUpperArm = currentVrm.humanoid.getNormalizedBoneNode('rightUpperArm');
-            // rightLowerArm = currentVrm.humanoid.getNormalizedBoneNode('rightLowerArm');
-            // rightHand = currentVrm.humanoid.getNormalizedBoneNode('rightHand');
-            // if (rightUpperArm && rightLowerArm && rightHand) {
-
-            //     rightArmBase = {
-            //         upper: {
-            //             x: rightUpperArm.rotation.x,
-            //             y: rightUpperArm.rotation.y,
-            //             z: rightUpperArm.rotation.z
-            //         },
-            //         lower: {
-            //             x: rightLowerArm.rotation.x,
-            //             y: rightLowerArm.rotation.y,
-            //             z: rightLowerArm.rotation.z
-            //         },
-            //         hand: {
-            //             x: rightHand.rotation.x,
-            //             y: rightHand.rotation.y,
-            //             z: rightHand.rotation.z
-            //         }
-            //     };
-
-            // }
 
             // モデルの向きを調整
             currentVrm.scene.rotation.y = 0;
@@ -306,8 +280,8 @@ if (container) {
         // ==============================
         // 視線追従
         // ==============================
-        lookAtTarget.position.x = mouseX * 2;
-        lookAtTarget.position.y = 1.3 - mouseY * 1.5;
+        lookAtTarget.position.x = mouseX * 3;
+        lookAtTarget.position.y = 1.3 - mouseY * 3.9;
 
         // ==============================
         // 顔の追従
