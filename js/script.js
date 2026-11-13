@@ -160,18 +160,6 @@ if (container) {
         y: 0
     };
 
-    // 体育座り用ボーン
-    let hips = null;
-    let spine = null;
-
-    let leftUpperLeg = null;
-    let rightUpperLeg = null;
-
-    let leftLowerLeg = null;
-    let rightLowerLeg = null;
-
-    let hipsBasePosition = null;
-
     let currentVrm = null;
 
     //まばたき時間初期設定
@@ -189,40 +177,6 @@ if (container) {
             currentVrm = gltf.userData.vrm;
 
             scene.add(currentVrm.scene);
-
-            // ==============================
-            // 体育座り用ボーン取得
-            // ==============================
-
-            hips = currentVrm.humanoid.getNormalizedBoneNode('hips');
-            spine = currentVrm.humanoid.getNormalizedBoneNode('spine');
-
-            leftUpperLeg = currentVrm.humanoid.getNormalizedBoneNode('leftUpperLeg');
-            rightUpperLeg = currentVrm.humanoid.getNormalizedBoneNode('rightUpperLeg');
-
-            leftLowerLeg = currentVrm.humanoid.getNormalizedBoneNode('leftLowerLeg');
-            rightLowerLeg = currentVrm.humanoid.getNormalizedBoneNode('rightLowerLeg');
-
-            hipsBasePosition = hips.position.clone();
-
-            // ==============================
-            // 体育座り：太ももの動作テスト
-            // ==============================
-
-            // 太ももだけを回転
-            leftUpperLeg.rotation.x = 0;
-            rightUpperLeg.rotation.x = 0;
-
-            // 膝を曲げる
-            leftLowerLeg.rotation.x = 0;
-            rightLowerLeg.rotation.x = 0;
-
-            // 腰を下げる
-            hips.position.y = hipsBasePosition.y;
-            spine.rotation.x = 0;
-
-            // 上半身は初期状態
-            spine.rotation.set(0, 0, 0);
 
             // 頭のボーンを取得
             head = currentVrm.humanoid.getNormalizedBoneNode('head');
@@ -252,7 +206,6 @@ if (container) {
             }
 
             console.log('VRM loaded!', currentVrm);
-
         },
 
         (progress) => {
